@@ -117,34 +117,36 @@ export default function Home() {
       <TrustStrip />
 
       {/* Contact */}
-      <section id="contact" className="bg-gray-50 py-24">
-        <div className="mx-auto w-[92%] max-w-6xl">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-            <p className="text-slate-600">
-              Questions, partnerships, or feedback? We'd love to hear from you.
-            </p>
-            <button
-              onClick={openContactModal}
-              className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl px-6 py-3 font-semibold shadow-sm transition-colors self-start sm:self-auto ml-4 sm:ml-0"
-            >
-              Contact Us
-            </button>
-          </div>
-          
-          {/* Trust badges */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500">
-            <span className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-              ISO
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-              GDPR
-            </span>
-            <span className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
-              Secure Cloud Hosting
-            </span>
+      <section id="contact" className="bg-gray-50 py-32 mt-16">
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="text-center">
+            <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-6 sm:gap-8">
+              <p className="text-lg text-slate-600">
+                Questions, partnerships, or feedback? We'd love to hear from you.
+              </p>
+              <button
+                onClick={openContactModal}
+                className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl px-8 py-4 font-semibold shadow-sm transition-colors text-lg"
+              >
+                Contact Us
+              </button>
+            </div>
+            
+            {/* Trust badges */}
+            <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-slate-500">
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                ISO
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                GDPR
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+                Secure Cloud Hosting
+              </span>
+            </div>
           </div>
         </div>
       </section>
