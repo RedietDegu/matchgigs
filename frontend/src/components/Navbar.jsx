@@ -45,7 +45,7 @@ export default function Navbar() {
 
         {/* Desktop actions */}
         <div className="hidden items-center gap-2 md:flex">
-          <a href="#demo" className="rounded-md bg-lime-600 px-3 py-2 text-sm font-semibold text-white hover:bg-lime-700">Begin interactive demo</a>
+          <a href="#demo" className="rounded-md bg-emerald-600 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-700">Begin interactive demo</a>
           <Link to="/signin" className="rounded-md border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-800 hover:bg-slate-50">Sign In</Link>
         </div>
 
@@ -70,7 +70,7 @@ export default function Navbar() {
             <a className="block text-slate-800" href="#testimonials" onClick={() => setOpen(false)}>Testimonials</a>
             <a className="block text-slate-800" href="/book-demo" onClick={() => setOpen(false)}>Book a Demo</a>
             <button className="block text-slate-800 w-full text-left" onClick={openContactModal}>Contact Us</button>
-            <a className="block rounded-md bg-lime-600 px-3 py-2 font-semibold text-white"
+            <a className="block rounded-md bg-emerald-600 px-3 py-2 font-semibold text-white hover:bg-emerald-700"
                href="#demo" onClick={() => setOpen(false)}>Begin interactive demo</a>
             <div className="pt-1">
               <Link className="rounded-md border border-slate-300 px-3 py-2 font-semibold text-slate-800"

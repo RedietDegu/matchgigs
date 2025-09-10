@@ -105,7 +105,7 @@ export default function Home() {
             </p>
             <a 
               href="/book-demo" 
-              className="inline-flex items-center justify-center rounded-xl border-2 border-emerald-600 px-6 py-3 font-semibold text-emerald-600 hover:bg-emerald-600 hover:text-white transition-colors"
+              className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-6 py-3 font-semibold text-white hover:bg-emerald-700 shadow-sm transition-colors"
             >
               Book a Demo
             </a>
