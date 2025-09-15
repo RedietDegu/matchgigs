@@ -17,18 +17,18 @@ export function initAnalytics() {
   initialized = true;
 }
 
-export function track(event: string, props?: Record<string, any>) {
+export function track(event, props) {
   try { posthog.capture(event, props); } catch {}
 }
 
-export async function identifyByEmailHashed(email: string, extra?: Record<string, any>) {
+export async function identifyByEmailHashed(email, extra) {
   try {
     const id = await sha256Hex(email.trim().toLowerCase());
     posthog.identify(id, extra);
   } catch {}
 }
 
-async function sha256Hex(v: string) {
+async function sha256Hex(v) {
   const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(v));
   return Array.from(new Uint8Array(b)).map(x => x.toString(16).padStart(2, "0")).join("");
 }
