@@ -1,20 +1,37 @@
 import posthog from "posthog-js";
 
-// Fallbacks: works without a .env
-const KEY  = import.meta.env.VITE_POSTHOG_KEY || "phc_RzX0Ft7S8gwvRm7Uxc9CSVkbiF85KIaejKAPYia9003";
+const KEY  = import.meta.env.VITE_POSTHOG_KEY || "";                  // env-first
 const HOST = import.meta.env.VITE_POSTHOG_HOST || "https://us.posthog.com";
 
 let initialized = false;
 
 export function initAnalytics() {
-  if (initialized || !KEY) return;
+  if (initialized) return;
+
+  if (!KEY) {
+    if (import.meta.env.DEV) console.warn("PostHog disabled: VITE_POSTHOG_KEY missing");
+    return;
+  }
+
   posthog.init(KEY, {
     api_host: HOST,
     capture_pageview: true,
     autocapture: true,
+    persistence: "localStorage+cookie",
+    // debug: import.meta.env.DEV,
   });
+
+  // confirm which config is active
+  posthog.capture("config_loaded", {
+    source: import.meta.env.VITE_POSTHOG_KEY ? "env" : "fallback",
+    host: HOST,
+  });
+
   posthog.capture("app_loaded");
   initialized = true;
+
+  // quick console helper: window.ph.capture('debug_ping')
+  if (typeof window !== "undefined") window.ph = posthog;
 }
 
 export function track(event, props) {
@@ -29,8 +46,9 @@ export async function identifyByEmailHashed(email, extra) {
 }
 
 async function sha256Hex(v) {
-  const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(v));
-  return Array.from(new Uint8Array(b)).map(x => x.toString(16).padStart(2, "0")).join("");
+  const enc = new TextEncoder().encode(v);
+  const buf = await crypto.subtle.digest("SHA-256", enc);
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
 }
 
 export { posthog };
