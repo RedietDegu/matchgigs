@@ -12,7 +12,7 @@ export default function WhyMatchAGig() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-          <div className="rounded-2xl bg-white p-5 md:p-6 shadow-md">
+          <div className="rounded-2xl bg-white p-6 md:p-7 shadow-md border border-transparent ring-1 ring-transparent transition-all duration-200 hover:shadow-lg hover:ring-emerald-200 hover:border-emerald-200 hover:-translate-y-0.5 hover:scale-[1.01]">
             <h3 className="text-xl font-bold text-slate-900 mb-4">
               Confidence at Every Step
             </h3>
@@ -21,7 +21,7 @@ export default function WhyMatchAGig() {
             </p>
           </div>
           
-          <div className="rounded-2xl bg-white p-5 md:p-6 shadow-md">
+          <div className="rounded-2xl bg-white p-6 md:p-7 shadow-md border border-transparent ring-1 ring-transparent transition-all duration-200 hover:shadow-lg hover:ring-emerald-200 hover:border-emerald-200 hover:-translate-y-0.5 hover:scale-[1.01]">
             <h3 className="text-xl font-bold text-slate-900 mb-4">
               Explainable AI Matching
             </h3>
@@ -30,7 +30,7 @@ export default function WhyMatchAGig() {
             </p>
           </div>
           
-          <div className="rounded-2xl bg-white p-5 md:p-6 shadow-md">
+          <div className="rounded-2xl bg-white p-6 md:p-7 shadow-md border border-transparent ring-1 ring-transparent transition-all duration-200 hover:shadow-lg hover:ring-emerald-200 hover:border-emerald-200 hover:-translate-y-0.5 hover:scale-[1.01]">
             <h3 className="text-xl font-bold text-slate-900 mb-4">
               Time Saved
             </h3>

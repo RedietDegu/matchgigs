@@ -6,18 +6,17 @@ export default function Hero() {
   return (
     <main className="text-slate-900">
       {/* Top bar */}
-      <header className="sticky top-0 z-40 bg-white/70 backdrop-blur border-b border-slate-200">
-        <div className="w-full max-w-screen-md md:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+      <header className="fixed top-0 inset-x-0 z-40 bg-white border-b border-emerald-100">
+        <div className="w-full max-w-screen-md md:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-start">
           <a href="/" className="flex items-center gap-2">
             <div className="h-7 w-7 rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 grid place-items-center text-white font-black">M</div>
             <span className="font-semibold tracking-tight">MatchAGig</span>
           </a>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-          </nav>
+          <nav className="hidden md:flex items-center gap-6 text-sm"></nav>
         </div>
       </header>
 
-      <section className="relative overflow-x-hidden bg-emerald-50">
+      <section className="relative overflow-x-hidden bg-emerald-50 pt-14">
         {/* Floating card - positioned outside the grid for proper sticky behavior */}
         <div className="hidden lg:block fixed top-24 right-6 z-30">
           <div id="join" />
