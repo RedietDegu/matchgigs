@@ -35,11 +35,11 @@ export default function InlineMailchimpForm() {
   }
 
   return (
-    <div className="mx-auto max-w-xl rounded-3xl border border-slate-200/70 bg-white p-6 shadow-[0_10px_30px_rgba(2,6,23,0.06)]">
-      <h2 className="text-3xl font-bold tracking-tight text-slate-900">
+    <div className="mx-auto w-full max-w-none rounded-3xl border border-slate-200/70 bg-white p-4 sm:p-6 shadow-[0_10px_30px_rgba(2,6,23,0.06)]">
+      <h2 className="text-2xl sm:text-3xl font-bold leading-tight tracking-tight text-slate-900">
         Submit your info to join the waitlist
       </h2>
-      <p className="mt-2 text-slate-600">
+      <p className="mt-2 text-sm sm:text-base text-slate-600">
         Join the waitlist to get first access
       </p>
 
@@ -70,16 +70,7 @@ export default function InlineMailchimpForm() {
         {/* OPTIONAL TAGS TO MAILCHIMP */}
         <input type="hidden" name="tags" value={tagsValue} />
 
-        {/* simple checkbox if you want to control tags */}
-        <label className="flex items-center gap-2 text-sm text-slate-700">
-          <input
-            type="checkbox"
-            checked={wantsResources}
-            onChange={(e) => setWantsResources(e.target.checked)}
-            className="h-4 w-4 rounded border-slate-300"
-          />
-          I'd like occasional hiring resources
-        </label>
+        {/* removed optional resources checkbox */}
 
         <button
           type="submit"

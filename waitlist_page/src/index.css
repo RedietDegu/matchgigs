@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Ensure no top gap and full-height root across breakpoints */
+html, body, #root { height: 100%; }
+body { margin: 0; }
+
 /* ========= Hero animations ========= */
 
 /* Ensure hero-enter makes elements visible even if animation is skipped */
