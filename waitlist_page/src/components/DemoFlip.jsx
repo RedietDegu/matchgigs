@@ -44,10 +44,10 @@ export default function DemoFlip({ initialFrame = "JD", cycleMs = 5000 }) {
           </div>
         </div>
 
-        {/* Body (taller to match your box) */}
-        <div className="relative min-h-[420px] overflow-x-hidden">
+        {/* Body (grow with content; no inner scrolling) */}
+        <div className="relative overflow-x-hidden">
           {/* JD */}
-          <div className={`absolute inset-0 p-4 sm:p-6 transition-opacity duration-300 ${frame==="JD"?"opacity-100":"opacity-0 pointer-events-none"}`}>
+          <div className={`p-4 sm:p-6 transition-opacity duration-300 ${frame==="JD"?"opacity-100":"opacity-0 pointer-events-none hidden"}`}>
             <div className="flex flex-col h-full">
               <label className="block text-xs font-medium text-slate-500 mb-2">Job Description</label>
               <textarea readOnly value={jd} className="flex-1 min-h-[200px] rounded-lg border border-slate-200 p-3 text-sm text-slate-700 bg-slate-50" />
@@ -61,7 +61,7 @@ export default function DemoFlip({ initialFrame = "JD", cycleMs = 5000 }) {
           </div>
 
           {/* Upload */}
-          <div className={`absolute inset-0 p-4 sm:p-6 transition-opacity duration-300 ${frame==="UPLOAD"?"opacity-100":"opacity-0 pointer-events-none"}`}>
+          <div className={`p-4 sm:p-6 transition-opacity duration-300 ${frame==="UPLOAD"?"opacity-100":"opacity-0 pointer-events-none hidden"}`}>
             <div className="flex flex-col h-full gap-4">
               <div className="rounded-2xl border bg-white p-4 sm:p-6 shadow-sm w-full">
                 <div className="border-2 border-dashed rounded-xl w-full h-40 sm:h-56 flex items-center justify-center text-gray-500 text-sm">
@@ -78,7 +78,7 @@ export default function DemoFlip({ initialFrame = "JD", cycleMs = 5000 }) {
           </div>
 
           {/* Ranked */}
-          <div className={`absolute inset-0 p-4 sm:p-6 transition-opacity duration-300 ${frame==="RANKED"?"opacity-100":"opacity-0 pointer-events-none"}`}>
+          <div className={`p-4 sm:p-6 transition-opacity duration-300 ${frame==="RANKED"?"opacity-100":"opacity-0 pointer-events-none hidden"}`}>
             <div className="flex flex-col h-full">
               <div className="flex flex-wrap gap-2 text-sm sm:text-base mb-4">
                 {[{label:"Candidates",value:127},{label:"Shortlisted",value:23},{label:"Interviews",value:5},{label:"Hired",value:2}].map(s=>(
@@ -90,7 +90,7 @@ export default function DemoFlip({ initialFrame = "JD", cycleMs = 5000 }) {
                 <button className="w-full sm:w-auto sm:ml-auto text-xs rounded-full border border-slate-200 px-3 py-1.5 hover:bg-slate-50">Score + Why</button>
               </div>
 
-              <div className="flex-1 grid grid-cols-1 gap-4 sm:gap-6 overflow-y-auto">
+              <div className="flex-1 grid grid-cols-1 gap-4 sm:gap-6">
                 {ranked.map(c=>(
                   <div key={c.name} className="rounded-2xl border border-slate-200 bg-white w-full p-4 sm:p-6 shadow-sm">
                     <div className="flex items-center justify-between">

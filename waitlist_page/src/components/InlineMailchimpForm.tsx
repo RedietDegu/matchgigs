@@ -35,7 +35,7 @@ export default function InlineMailchimpForm() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-none rounded-3xl border border-slate-200/70 bg-white p-4 sm:p-6 shadow-[0_10px_30px_rgba(2,6,23,0.06)]">
+    <div className="mx-auto w-full max-w-none">
       <h2 className="text-2xl sm:text-3xl font-bold leading-tight tracking-tight text-slate-900">
         Submit your info to join the waitlist
       </h2>
